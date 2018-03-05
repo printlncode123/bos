@@ -1,0 +1,28 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">
+
+    <diskStore path="java.io.tmpdir"/><!-- 临时存储到系统的目录下 -->
+
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="true"
+            maxElementsOnDisk="10000000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            />
+            
+            <!--
+             maxElementsInMemory="10000"//内存中最多缓存10000个 对象
+            eternal="false"//缓存中的数据是否永久有效
+            timeToIdleSeconds="120"//最大空闲时间，秒
+            timeToLiveSeconds="120"//最大活跃(有效)时间
+            overflowToDisk="true"//内存中超出是否溢出到磁盘 
+            maxElementsOnDisk="10000000"//磁盘上最多存放多少Java对象
+            diskPersistent="false"//溢出到磁盘的Java对象是否永久有效(tomcat重启后是否还有效果)
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"//缓存中最近最少使用的先清理
+             -->
+</ehcache>
